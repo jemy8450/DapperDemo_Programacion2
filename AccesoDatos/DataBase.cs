@@ -20,7 +20,6 @@ namespace AccesoDatos
 
         public static SqlConnection GetSqlConnection()
         {
-
             SqlConnection conexion = new SqlConnection(ConnectionString);
             conexion.Open();
             return conexion;
