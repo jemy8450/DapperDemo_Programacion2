@@ -8,9 +8,6 @@ namespace AccesoDatos
 {
     public class Customers
     {
-        
-        
-
             public string CustomerID { get; set; }
             public string CompanyName { get; set; }
             public string ContactName { get; set; }
@@ -23,6 +20,5 @@ namespace AccesoDatos
             public string Phone { get; set; }
             public string Fax { get; set; }
         
-
     }
 }

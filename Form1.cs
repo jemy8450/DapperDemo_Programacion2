@@ -31,6 +31,9 @@ namespace DapperDemo_Programacion2
             dgvCustomers.DataSource = cliente;
         }
 
-        
+        private void btnObtenerId_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

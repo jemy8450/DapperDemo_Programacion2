@@ -32,6 +32,32 @@ namespace AccesoDatos
                 var cliente = conexion.Query<Customers>(SelectAll).ToList();
                 return cliente;
 
+            }
+        }
+
+        //--------------------------------------------------------------------------//
+
+        public Customers ObtenerPorID(string id)
+        {
+            using(var conexion = DataBase.GetSqlConnection())
+            {
+                String SelectPorID = "";
+                SelectPorID = SelectPorID + "SELECT [CustomerID] " + "\n";
+                SelectPorID = SelectPorID + "      ,[CompanyName] " + "\n";
+                SelectPorID = SelectPorID + "      ,[ContactName] " + "\n";
+                SelectPorID = SelectPorID + "      ,[ContactTitle] " + "\n";
+                SelectPorID = SelectPorID + "      ,[Address] " + "\n";
+                SelectPorID = SelectPorID + "      ,[City] " + "\n";
+                SelectPorID = SelectPorID + "      ,[Region] " + "\n";
+                SelectPorID = SelectPorID + "      ,[PostalCode] " + "\n";
+                SelectPorID = SelectPorID + "      ,[Country] " + "\n";
+                SelectPorID = SelectPorID + "      ,[Phone] " + "\n";
+                SelectPorID = SelectPorID + "      ,[Fax] " + "\n";
+                SelectPorID = SelectPorID + "  FROM [dbo].[Customers] " + "\n";
+                SelectPorID = SelectPorID + "  WHERE CustomerID = @CustomerID]";
+
+                var Cliente = conexion.QueryFirstOrDefault<Customers>(SelectPorID, new { CustomerID = id });
+                return Cliente;
 
             }
         }
