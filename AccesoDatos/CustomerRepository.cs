@@ -100,7 +100,7 @@ namespace AccesoDatos
 
         public int ActualizarCliente(Customers customers)
         {
-            using (var conexion = DataBase.GetSqlConnection() )
+            using (var conexion = DataBase.GetSqlConnection())
             {
                 String UpdateCustomer = "";
                 UpdateCustomer = UpdateCustomer + "UPDATE [dbo].[Customers] " + "\n";
@@ -120,6 +120,24 @@ namespace AccesoDatos
                     Address = customers.Address,
                 });
                 return actualizadas;
+            }
+        }
+
+        //--------------------------------------------------------------------------//
+
+        public int EliminarCliente(string Id)
+        {
+            using (var conexion = DataBase.GetSqlConnection())
+            {
+                String Delete = "";
+                Delete = Delete + "DELETE FROM [dbo].[Customers] " + "\n";
+                Delete = Delete + "      WHERE CustomerID = @CustomerID";
+
+                var eliminadas = conexion.Execute(Delete, new
+                {
+                    CustomerID = Id
+                });
+                return eliminadas;
             }
         }
     }

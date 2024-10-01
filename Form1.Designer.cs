@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.btnObtenerTodos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,12 +63,13 @@
             // 
             // btnObtenerTodos
             // 
-            this.btnObtenerTodos.Location = new System.Drawing.Point(903, 310);
+            this.btnObtenerTodos.BackColor = System.Drawing.Color.Gold;
+            this.btnObtenerTodos.Location = new System.Drawing.Point(853, 307);
             this.btnObtenerTodos.Name = "btnObtenerTodos";
             this.btnObtenerTodos.Size = new System.Drawing.Size(103, 51);
             this.btnObtenerTodos.TabIndex = 1;
             this.btnObtenerTodos.Text = "Obtener Todos";
-            this.btnObtenerTodos.UseVisualStyleBackColor = true;
+            this.btnObtenerTodos.UseVisualStyleBackColor = false;
             this.btnObtenerTodos.Click += new System.EventHandler(this.btnObtenerTodos_Click);
             // 
             // label1
@@ -96,25 +99,26 @@
             // 
             // btnObtenerId
             // 
+            this.btnObtenerId.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnObtenerId.Location = new System.Drawing.Point(343, 312);
             this.btnObtenerId.Name = "btnObtenerId";
             this.btnObtenerId.Size = new System.Drawing.Size(90, 49);
             this.btnObtenerId.TabIndex = 5;
             this.btnObtenerId.Text = "Buscar";
-            this.btnObtenerId.UseVisualStyleBackColor = true;
+            this.btnObtenerId.UseVisualStyleBackColor = false;
             this.btnObtenerId.Click += new System.EventHandler(this.btnObtenerId_Click);
             // 
             // txbCustomerId
             // 
-            this.txbCustomerId.Location = new System.Drawing.Point(858, 404);
+            this.txbCustomerId.Location = new System.Drawing.Point(748, 404);
             this.txbCustomerId.Name = "txbCustomerId";
-            this.txbCustomerId.Size = new System.Drawing.Size(148, 22);
+            this.txbCustomerId.Size = new System.Drawing.Size(208, 22);
             this.txbCustomerId.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(775, 410);
+            this.label3.Location = new System.Drawing.Point(665, 407);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 7;
@@ -122,15 +126,15 @@
             // 
             // txbCompanyName
             // 
-            this.txbCompanyName.Location = new System.Drawing.Point(858, 432);
+            this.txbCompanyName.Location = new System.Drawing.Point(748, 432);
             this.txbCompanyName.Name = "txbCompanyName";
-            this.txbCompanyName.Size = new System.Drawing.Size(148, 22);
+            this.txbCompanyName.Size = new System.Drawing.Size(208, 22);
             this.txbCompanyName.TabIndex = 17;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(747, 435);
+            this.label9.Location = new System.Drawing.Point(637, 435);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 16);
             this.label9.TabIndex = 16;
@@ -138,15 +142,15 @@
             // 
             // txbContactName
             // 
-            this.txbContactName.Location = new System.Drawing.Point(858, 460);
+            this.txbContactName.Location = new System.Drawing.Point(748, 460);
             this.txbContactName.Name = "txbContactName";
-            this.txbContactName.Size = new System.Drawing.Size(148, 22);
+            this.txbContactName.Size = new System.Drawing.Size(208, 22);
             this.txbContactName.TabIndex = 20;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(760, 463);
+            this.label5.Location = new System.Drawing.Point(650, 463);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 16);
             this.label5.TabIndex = 19;
@@ -154,15 +158,15 @@
             // 
             // txbContactTitle
             // 
-            this.txbContactTitle.Location = new System.Drawing.Point(858, 488);
+            this.txbContactTitle.Location = new System.Drawing.Point(748, 488);
             this.txbContactTitle.Name = "txbContactTitle";
-            this.txbContactTitle.Size = new System.Drawing.Size(148, 22);
+            this.txbContactTitle.Size = new System.Drawing.Size(208, 22);
             this.txbContactTitle.TabIndex = 23;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(771, 491);
+            this.label7.Location = new System.Drawing.Point(661, 491);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 16);
             this.label7.TabIndex = 22;
@@ -170,15 +174,15 @@
             // 
             // txbAddress
             // 
-            this.txbAddress.Location = new System.Drawing.Point(858, 516);
+            this.txbAddress.Location = new System.Drawing.Point(748, 516);
             this.txbAddress.Name = "txbAddress";
-            this.txbAddress.Size = new System.Drawing.Size(148, 22);
+            this.txbAddress.Size = new System.Drawing.Size(208, 22);
             this.txbAddress.TabIndex = 26;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(794, 519);
+            this.label11.Location = new System.Drawing.Point(684, 519);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(58, 16);
             this.label11.TabIndex = 25;
@@ -186,29 +190,44 @@
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(611, 410);
+            this.btnInsertar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnInsertar.Location = new System.Drawing.Point(517, 391);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(90, 49);
             this.btnInsertar.TabIndex = 27;
             this.btnInsertar.Text = "Insertar Cliente";
-            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.UseVisualStyleBackColor = false;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(611, 475);
+            this.btnActualizar.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnActualizar.Location = new System.Drawing.Point(517, 456);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(90, 49);
             this.btnActualizar.TabIndex = 28;
             this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Crimson;
+            this.btnEliminar.Location = new System.Drawing.Point(517, 521);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(90, 49);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 586);
+            this.BackColor = System.Drawing.Color.SlateGray;
+            this.ClientSize = new System.Drawing.Size(1018, 604);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.txbAddress);
@@ -227,9 +246,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnObtenerTodos);
             this.Controls.Add(this.dgvCustomers);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Formulario de Dapper";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.ResumeLayout(false);
@@ -257,6 +277,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
 
