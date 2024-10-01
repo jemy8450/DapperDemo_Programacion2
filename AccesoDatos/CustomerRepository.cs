@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,7 +55,7 @@ namespace AccesoDatos
                 SelectPorID = SelectPorID + "      ,[Phone] " + "\n";
                 SelectPorID = SelectPorID + "      ,[Fax] " + "\n";
                 SelectPorID = SelectPorID + "  FROM [dbo].[Customers] " + "\n";
-                SelectPorID = SelectPorID + "  WHERE CustomerID = @CustomerID]";
+                SelectPorID = SelectPorID + "  WHERE CustomerID = @CustomerID";
 
                 var Cliente = conexion.QueryFirstOrDefault<Customers>(SelectPorID, new { CustomerID = id });
                 return Cliente;
@@ -92,6 +93,33 @@ namespace AccesoDatos
                     Address = customer.Address,
                 });
                 return insertadas;
+            }
+        }
+
+        //--------------------------------------------------------------------------//
+
+        public int ActualizarCliente(Customers customers)
+        {
+            using (var conexion = DataBase.GetSqlConnection() )
+            {
+                String UpdateCustomer = "";
+                UpdateCustomer = UpdateCustomer + "UPDATE [dbo].[Customers] " + "\n";
+                UpdateCustomer = UpdateCustomer + "   SET [CustomerID] = @CustomerID " + "\n";
+                UpdateCustomer = UpdateCustomer + "      ,[CompanyName] = @CompanyName " + "\n";
+                UpdateCustomer = UpdateCustomer + "      ,[ContactName] = @ContactName " + "\n";
+                UpdateCustomer = UpdateCustomer + "      ,[ContactTitle] = @ContactTitle " + "\n";
+                UpdateCustomer = UpdateCustomer + "      ,[Address] = @Address " + "\n";
+                UpdateCustomer = UpdateCustomer + " WHERE CustomerID = @CustomerID";
+
+                var actualizadas = conexion.Execute(UpdateCustomer, new
+                {
+                    CustomerID = customers.CustomerID,
+                    CompanyName = customers.CompanyName,
+                    ContactName = customers.ContactName,
+                    ContactTitle = customers.ContactTitle,
+                    Address = customers.Address,
+                });
+                return actualizadas;
             }
         }
     }
